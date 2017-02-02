@@ -8,17 +8,34 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource {
 
+    let data: [String] = ["Task 1","Task 2","Task 3","Task 4"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+     
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //Rows, and section --> Once you declare interface you have to declare methods for it
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        //as CustomTableViewCell casting cell to customCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "todorows", for: indexPath) as! CustomTableViewCell
+        
+        //cell.textLabel?.text = data[indexPath.row]
+        cell.todoCellLabel?.text = data[indexPath.row]
+        
+        return cell
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+    
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        <#code#>
+//    }
+    
 
 
 }
