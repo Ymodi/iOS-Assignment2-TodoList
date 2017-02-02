@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="iiB-2c-Qpa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Your To Do List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
@@ -83,15 +83,18 @@
                             <constraint firstAttribute="trailing" secondItem="XZi-a7-Q3F" secondAttribute="trailing" id="wQ2-3J-Xer"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Your To Do List" id="hRx-YJ-RDr">
+                        <barButtonItem key="backBarButtonItem" title="TaskList" id="5B6-Ye-DLa"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1026" y="76"/>
+            <point key="canvasLocation" x="-87.200000000000003" y="75.112443778110944"/>
         </scene>
-        <!--View Controller-->
+        <!--Details of your task-->
         <scene sceneID="7V9-vS-hVj">
             <objects>
-                <viewController id="VMR-ha-A2v" sceneMemberID="viewController">
+                <viewController id="VMR-ha-A2v" customClass="DetailToDoViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kbz-cS-eBp"/>
                         <viewControllerLayoutGuide type="bottom" id="udG-fC-Qis"/>
@@ -99,12 +102,44 @@
                     <view key="view" contentMode="scaleToFill" id="5EY-4h-Oe5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpX-eb-ih2">
+                                <rect key="frame" x="101" y="310" width="173" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dpX-eb-ih2" firstAttribute="centerX" secondItem="5EY-4h-Oe5" secondAttribute="centerX" id="Aqs-cC-CTs"/>
+                            <constraint firstItem="dpX-eb-ih2" firstAttribute="centerY" secondItem="5EY-4h-Oe5" secondAttribute="centerY" id="k0M-8D-5vX"/>
+                            <constraint firstItem="dpX-eb-ih2" firstAttribute="leading" secondItem="5EY-4h-Oe5" secondAttribute="leadingMargin" constant="85" id="ouK-zV-cR3"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Details of your task" id="d5u-KR-Fp6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1F-pl-LvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-226" y="66"/>
+            <point key="canvasLocation" x="705" y="57"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zOe-Qu-SfK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iiB-2c-Qpa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="91B-O3-av2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="77y-eZ-pp8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AMl-GY-UvN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1026.4000000000001" y="75.112443778110944"/>
         </scene>
     </scenes>
 </document>

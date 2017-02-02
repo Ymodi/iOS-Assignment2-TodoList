@@ -38,6 +38,10 @@ class CustomTableViewCell: UITableViewCell {
     }
     
     @IBAction func editButtonTouched(_ sender: UIButton) {
+        //todoCellLabel.text
+        //sender.tag = 26
+        
+        
         print("Edit Touched")
     }
     
